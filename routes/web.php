@@ -9,7 +9,7 @@ use App\Http\Controllers\ProductosController;
 
 // RUTA LLAMANDO UNA VISTA:
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio');
 });
 
 // RUTA POR MEDIO DE UN CONTROLADOR:
