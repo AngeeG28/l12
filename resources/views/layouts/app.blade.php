@@ -121,7 +121,7 @@
             <div class="container-fluid">
             
             <!-- Logo con icono de libro -->
-            <a class="navbar-brand" href="http://localhost/laravel/unisarc/l12/public/" target="_blank">
+            <a class="navbar-brand" href={{ url("/")}} target="_blank">
             <i class="bi bi-book-half" style="color: #002230ff;"></i> Book Store
             </a>
 
@@ -130,10 +130,10 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                 <a class="nav-link active" aria-current="page" 
-                    href="http://localhost/laravel/unisarc/l12/public/">Inicio</a>
+                    href={{ url("/")}}>Inicio</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="/views/productos">Productos</a>
+                <a class="nav-link" href={{ url("/productos") }}>Productos</a>
                     </li>
                 </ul>
                 </div>

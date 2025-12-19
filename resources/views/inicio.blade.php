@@ -29,7 +29,7 @@
                     <p class="card-text text-muted" style="font-size:0.95rem; line-height:1.4;">
                         ¡Prepárate para adentrarte en la oscuridad! Nuestra categoría de libros de terror te sumergirá en atmósferas inquietantes, misterios sobrenaturales y horrores psicológicos que exploran tus miedos más profundos.
                     </p>
-                    <a href="<?= ('/productos'); ?>" class="btn btn-outline-dark w-100">Ver Inventario</a>
+                    <a href="{{ url('/productos') }}" class="btn btn-outline-dark w-100">Ver Inventario</a>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
                     <p class="card-text text-muted" style="font-size:0.95rem; line-height:1.4;">
                         ¡Bienvenido al reino de lo imposible! Nuestra categoría de fantasía te invita a escapar de lo cotidiano y sumergirte en universos donde la magia fluye libre y criaturas míticas desafían la razón.
                     </p>
-                    <a href="<?= ('/productos'); ?>" class="btn btn-outline-dark w-100">Ver Productos</a>
+                    <a href="{{ url('/productos') }}" class="btn btn-outline-dark w-100">Ver Productos</a>
                 </div>
             </div>
         </div>

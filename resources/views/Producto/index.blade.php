@@ -24,7 +24,7 @@
                     <td><?= $p->stock; ?></td>
                     <td>$<?= number_format($p->valor, 0, ",", "."); ?></td>
                     <td>
-                        <a href="<?= ('/productos' . $p->sku) ?>" class="btn btn-sm btn-primary" style="aling-content:center">Ver</a>
+                        <a href="<?= ('detalle/' . $p->sku) ?>" class="btn btn-sm btn-primary" style="aling-content:center">Ver</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

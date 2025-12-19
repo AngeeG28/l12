@@ -13,7 +13,13 @@ Route::get('/', function () {
 });
 
 // RUTA POR MEDIO DE UN CONTROLADOR:
-Route::get('/productos', [ProductosController::class, 'index']);
+Route::get('/productos', [ProductosController::class, 'index'])->name('productos.index');
+
+Route::get('/productos/inactivar/{sku}', [ProductosController::class, 'inactivar'])->name('productos.inactivar');
+Route::get('/productos/activar/{sku}', [ProductosController::class, 'activar'])->name('productos.activar');
+
+Route::get('/detalle/{sku}', [ProductosController::class, 'detalle']);
+
 
 // Route::get('/productos', function () {
 //     return view('productos');
