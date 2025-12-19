@@ -13,19 +13,23 @@ Route::get('/', function () {
 });
 
 // RUTA POR MEDIO DE UN CONTROLADOR:
-Route::get('/productos', [ProductosController::class, 'productos']);
+Route::get('/productos', [ProductosController::class, 'index']);
+
+// Route::get('/productos', function () {
+//     return view('productos');
+// });
 
 // RUTA DEVUELVE CADENA DE TEXTO:
-Route::get('/nosotros', function () {
-    return "Estos domos nosotros";
-});
+// Route::get('/productos', function () {
+//     return "Estos domos nosotros";
+// });
 
-Route::get('/detalle/{id}', function ($id) {
-    return view('detalle', compact('id'));
-});
+// Route::get('/detalle/{id}', function ($id) {
+//     return view('detalle', compact('id'));
+// });
 
 
 // EJEMPLO
-// Route::get('/detalle', function () {
-//     return view('detalle');
-// });
+Route::get('/detalle', function () {
+    return view('detalle');
+});

@@ -121,7 +121,7 @@
             <div class="container-fluid">
             
             <!-- Logo con icono de libro -->
-            <a class="navbar-brand" href="http://localhost/ejercicio_I/public/" target="_blank">
+            <a class="navbar-brand" href="http://localhost/laravel/unisarc/l12/public/" target="_blank">
             <i class="bi bi-book-half" style="color: #002230ff;"></i> Book Store
             </a>
 
@@ -130,15 +130,16 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                 <a class="nav-link active" aria-current="page" 
-                    href="http://localhost/ejercicio_I/public/">Inicio</a>
+                    href="http://localhost/laravel/unisarc/l12/public/">Inicio</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="productos">Productos</a>
+                <a class="nav-link" href="/views/productos">Productos</a>
                     </li>
                 </ul>
                 </div>
             </div>
         </nav>
+
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
@@ -149,7 +150,7 @@
       <footer style="background-color: #02354bff;">
 
         <div class="footer" style="text-align:center; align-content: center; margin-top: 40px; border-top:  1px solid #b9b9b9ff; height: 150px; color:white;">
-          © 2025 CodeIgniter Foundation. Frameworks de programación UNISARC.
+          © 2025 LARAVEL 12. Frameworks de programación UNISARC.
         </div>
         
       </footer>

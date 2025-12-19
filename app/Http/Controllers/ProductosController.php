@@ -1,13 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\productos;
 use Illuminate\Http\Request;
 
 class ProductosController extends Controller
 {
-    public function productos()
+    public function index()
     {
-        return "listado de productos";
+        $productos = productos::all();
+        
+        return view('Producto.index', compact('productos')); //se pasa a la variable productos -> $
     }
 }
+
