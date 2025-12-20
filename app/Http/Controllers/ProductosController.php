@@ -20,26 +20,5 @@ class ProductosController extends Controller
 
         return view('Producto.detalle', compact('productos','sku'));
     }
-
-    public function inactivar($sku)
-    {
-        // findOrFail usa la PK (sku) definida en el modelo
-        $productos = productos::findOrFail($sku);
-
-        $productos->estado = 'inactivo';
-        $productos->save();
-
-        return redirect()->route('productos.index');
-    }
-
-    public function activar($sku)
-    {
-        $productos = productos::findOrFail($sku);
-
-        $productos->estado = 'activo';
-        $productos->save();
-
-        return redirect()->route('productos.index');
-    }
 }
 
