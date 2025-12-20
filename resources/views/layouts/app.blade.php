@@ -112,6 +112,12 @@
         border-radius: 6px;
         font-size: 0.85rem;
       }
+
+      /* Footer layout */
+      body { display: flex; flex-direction: column; min-height: 100vh; }
+      main { flex: 1; }
+      footer.site-footer { width: 100%; background-color: #02354bff; }
+      footer.site-footer .footer { text-align: center; align-content: center; margin-top: 40px;  padding: 40px 0; color: white; }
     </style>
 
     </head>
@@ -145,11 +151,13 @@
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
             crossorigin="anonymous"></script>
             
-            @yield('content')
+            <main>
+                @yield('content')
+            </main>
     
-      <footer style="background-color: #02354bff;">
+      <footer class="site-footer">
 
-        <div class="footer" style="text-align:center; align-content: center; margin-top: 40px; border-top:  1px solid #b9b9b9ff; height: 150px; color:white;">
+        <div class="footer">
           © 2025 LARAVEL 12. Frameworks de programación UNISARC.
         </div>
         
