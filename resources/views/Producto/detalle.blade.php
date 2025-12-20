@@ -13,11 +13,7 @@
         <p class="lead mb-4">{{ $productos->descripcion }}</p>
         <br>
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-         @if($productos->estado == 'inactivo')
-            <a href="{{ url('/productos/activar/'.$sku) }}" type="button" class="btn btn-primary btn-lg px-4 gap-3">Activar</a>
-         @else
-            <a href="{{ url('/productos/inactivar/'.$sku) }}" type="button" class="btn btn-primary btn-lg px-4 gap-3">Inactivar</a>
-         @endif
+            <button type="button" class="btn btn-primary btn-lg px-4 gap-3" data-bs-toggle="modal" data-bs-target="#loginPromptModal">Agregar al carrito</button>
             <a href="{{ url('/productos') }}" class="btn btn-outline-secondary btn-lg px-4" role="button">
               Regresar </a>
         </div> 
@@ -25,6 +21,24 @@
     </div>
 </div>
 
+   <!-- Modal de inicio de sesión -->
+   <div class="modal" id="loginPromptModal" tabindex="-1">
+      <div class="modal-dialog">
+         <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title">Iniciar Sesión</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+            <p>Por favor, inicia sesión para agregar libros al carrito.</p>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <a href="{{ route('login') }}" class="btn btn-primary">Iniciar Sesión</a>
+         </div>
+         </div>
+      </div>
+   </div>
 @endsection
 
   

@@ -36,11 +36,47 @@
                     <td>$<?= number_format($p->valor, 0, ",", "."); ?></td>
                     <td>
                         <a href="<?= ('productos/' . $p->sku) ?>" class="btn btn-sm btn-primary" style="aling-content:center">Ver</a>
+                    <!-- BOTÓN ELIMINAR -->
+                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#modalEliminar{{ $p->sku }}">Eliminar</button>
+
+                    <!-- MODAL ELIMINAR -->
+                    <div class="modal" id="modalEliminar{{ $p->sku }}" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Eliminar Libro</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>¿Estás seguro de eliminar el libro "<strong><?= $p->nombre ?></strong>"?</p><br>
+                                <small class="text-muted">SKU: {{ $p->sku }}</small>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <form action="{{ route('productos.destroy', $p->sku) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <!-- BOTÓN EDITAR -->
+                        <a href="{{ route('productos.edit', $p->sku) }}" class="btn btn-warning">Editar</a>
                     </td>
                 </tr>
+                
+
                 <?php endforeach; ?>
             </tbody>
         </table>
+
+        <!-- BOTONES DE PAGINACIÓN -->
+         <div class="d-flex justify-content-center mt-4">
+        {{ $productos->links() }}
+        </div>
 
         <!-- DISEÑO DE MODAL -->
 

@@ -12,7 +12,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        $productos = productos::all();
+        $productos = productos::paginate(10); // Paginación de 10 productos por página
+
         return view('producto.index', compact('productos'));
     }
 
@@ -35,7 +36,6 @@ class PostController extends Controller
         $producto->descripcion = $request->descripcion;
         $producto->stock = $request->stock;
         $producto->valor = $request->valor;
-        $producto->estado = "activo";
         $producto->save();
         return redirect()->back()->with('success', 'Libro creado exitosamente, agregar la imagen en la carpeta imagenes/Stock.');
     }
@@ -53,17 +53,25 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $sku)
     {
-        //
+        $producto = productos::where('sku', $sku)->first();
+        return view('Producto.editar', compact('sku','producto'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $sku)
     {
-        //
+        $producto = productos::where('sku', $sku)->first();
+        $producto->nombre = $request->nombre;
+        $producto->autor = $request->autor;
+        $producto->descripcion = $request->descripcion;
+        $producto->stock = $request->stock;
+        $producto->valor = $request->valor;
+        $producto->save();
+        return redirect()->back()->with('success', 'Libro actualizado exitosamente.');
     }
 
     /**
@@ -71,6 +79,8 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $producto = productos::where('sku', $id)->first();
+        $producto->delete();
+        return redirect()->back()->with('success', 'Libro eliminado exitosamente.');
     }
 }
